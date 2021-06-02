@@ -29,22 +29,20 @@ $datas = [
     [
         "question" => "Perché il mio account è associato a un paese?",
         "answer" => [
-            "paragraph_1" => [
-                "sub_paragraph_1" => "Il tuo account è associato a un paese (o territorio) nei Termini di servizio per poter stabilire due cose:",
-                "list_1" => "La società consociata Google che offre i servizi, tratta le tue informazioni ed è responsabile del rispetto delle leggi sulla privacy vigenti. Generalmente Google offre i propri servizi per i consumatori tramite una delle due società seguenti:",
-                "sub_list" => [
-                    "sub_list_item_1" => "Google Ireland Limited, se gli utenti sono residenti nello Spazio economico europeo (paesi dell'Unione europea, oltre a Islanda, Liechtenstein e Norvegia) o in Svizzera.",
-                    "sub_list_item_2" => "Google LLC, con sede negli Stati Uniti, per il resto del mondo."
+            "paragraph_1" => "Il tuo account è associato a un paese (o territorio) nei Termini di servizio per poter stabilire due cose:",   
+            "paragraph_2" => [
+                "ord_list_1" => "La società consociata Google che offre i servizi, tratta le tue informazioni ed è responsabile del rispetto delle leggi sulla privacy vigenti. Generalmente Google offre i propri servizi per i consumatori tramite una delle due società seguenti:",
+                "ord_list_2" => [
+                    "sub_list_1" => "Google Ireland Limited, se gli utenti sono residenti nello Spazio economico europeo (paesi dell'Unione europea, oltre a Islanda, Liechtenstein e Norvegia) o in Svizzera.",
+                    "sub_list_2" => "Google LLC, con sede negli Stati Uniti, per il resto del mondo."
                 ],
-                "list_2" => "La versione dei termini che regola il nostro rapporto, che può variare in base alle leggi locali.",
-                "sub_paragraph_2" => "Tieni presente che i servizi Google sono fondamentalmente gli stessi a prescindere dalla società consociata che li offre o dal paese a cui è associato il tuo account.",
-                "sub_paragraph_3" => [
-                    "sub_paragraph_3_title" => "Stabilire il paese associato al tuo account",
-                    "sub_paragraph_3_txt_1" => "Quando crei un nuovo Account Google, lo associamo a un paese in base a dove è stato creato. Per quanto riguarda gli account creati almeno un anno fa, usiamo il paese da cui accedi solitamente ai servizi Google, in genere i servizi in cui hai trascorso più tempo nell'ultimo anno.",
-                    "sub_paragraph_3_txt_2" => "I viaggi frequenti solitamente non influiscono sul paese associato al tuo account. Se ti trasferisci in un altro paese, potrebbe occorrere circa un anno per aggiornare l'associazione del paese.",
-                    "sub_paragraph_3_txt_3" => "Se il paese associato al tuo account non corrisponde al tuo paese di residenza, il motivo potrebbe essere la differenza tra il paese in cui lavori e il paese in cui risiedi, l'installazione di una rete privata virtuale (VPN) per mascherare il tuo indirizzo IP oppure la residenza vicino a un confine territoriale. Contattaci se ritieni che il paese associato al tuo account sia sbagliato.",
-                ]
+                "ord_list_3" => "La versione dei termini che regola il nostro rapporto, che può variare in base alle leggi locali."
             ],
+            "paragraph_3" => "Tieni presente che i servizi Google sono fondamentalmente gli stessi a prescindere dalla società consociata che li offre o dal paese a cui è associato il tuo account.",
+            "paragraph_4" => "<strong>Stabilire il paese associato al tuo account</strong>", 
+            "paragraph_5" => "Quando crei un nuovo Account Google, lo associamo a un paese in base a dove è stato creato. Per quanto riguarda gli account creati almeno un anno fa, usiamo il paese da cui accedi solitamente ai servizi Google, in genere i servizi in cui hai trascorso più tempo nell'ultimo anno.",
+            "paragraph_6" => "I viaggi frequenti solitamente non influiscono sul paese associato al tuo account. Se ti trasferisci in un altro paese, potrebbe occorrere circa un anno per aggiornare l'associazione del paese.",
+            "paragraph_7" => "Se il paese associato al tuo account non corrisponde al tuo paese di residenza, il motivo potrebbe essere la differenza tra il paese in cui lavori e il paese in cui risiedi, l'installazione di una rete privata virtuale (VPN) per mascherare il tuo indirizzo IP oppure la residenza vicino a un confine territoriale. Contattaci se ritieni che il paese associato al tuo account sia sbagliato."
         ],
     ],
     [
@@ -156,43 +154,41 @@ foreach ($datas as $data) {
         <div class="container">
         <?php
            foreach ($datas as $data) {
-            //var_dump($data);
-            // stampo le domande tramite il comando echo
-            echo $data["question"] . "<br>";
-            //var_dump($data["answer"]);
-        
-            //salvo le risposte in una variabile su cui faccio un nuovo ciclo foreach
+        ?>
+            
+            <h2><?php echo $data["question"]; ?></h2>
+
+        <?php  
             $answers = $data["answer"];
-            //var_dump($answers);
+            
             echo "<br>";
             
             foreach ($answers as $answer) {
-                // ho pero' la terza domanda che ha come risposta un array
-                // quindi faccio un if utilizzando la funzione is_array per valutare la condizione
                 if (!is_array($answer)) {
-                    // con questa condizione se NON e' un array allora stampo il paragrafo
-                    echo $answer . "<br>";
+        ?>
+                    
+                    <p><?php echo $answer; ?></p>
+
+        <?php            
                 } else {
-                    // se invece answer risulta esserr un array, come nella terza domanda
-                    // faccio una nuova serie di cicli foreach
-                    //var_dump($answer);
                     foreach ($answer as $sub_answer) {
-                        // effettuo un altro controllo if uguale al precedente
                         if (!is_array($sub_answer)) {
-                            // come in precedenza tramite echo stampo i valori che adesso sono singole stringhe
-                            echo $sub_answer . "<br>";
+        ?>                                        
+                            <ol>
+                                <li><?php echo $sub_answer; ?></li>
+                                <ul>                       
+        <?php                    
                         } else {
-                            // come ultimo passaggio faccio anche qui un ciclo foreach
-                            // per stampare gli ultimi valori degli array pi' interni
                             foreach ($sub_answer as $sub_sub_answer) {
-                                // stampo quindi i valori delle risposte piu' interne
-                                echo $sub_sub_answer . "<br>";
+        ?>
+                                
+                                    <li><?php echo $sub_sub_answer; ?></li>
+                                </ul>
+                            </ol>
+        <?php
                             }
-                            //var_dump($sub_answer);
-        
                         }
-                    }
-                     
+                    }    
                 }
                 echo "<br>";
             }
