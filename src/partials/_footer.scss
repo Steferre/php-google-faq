@@ -1,0 +1,21 @@
+footer {
+    @include flexStd;
+    height: 40px;
+    background-color: $bgHeader_Footer;
+}
+
+.footer_links ul{
+    @include defaultListStyle;
+        li {
+            margin-right: $spaceB5;
+                a {
+                    color: $txtColor;
+                    font-size: $xs; 
+                }
+        }
+}
+
+.selectBox select {
+    width: 150px;
+    outline: none;
+}

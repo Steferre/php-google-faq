@@ -152,7 +152,73 @@ foreach ($datas as $data) {
             </ul>
         </nav>
     </header>
-    <main></main>
-    <footer></footer>
+    <main>
+        <div class="container">
+        <?php
+           foreach ($datas as $data) {
+            //var_dump($data);
+            // stampo le domande tramite il comando echo
+            echo $data["question"] . "<br>";
+            //var_dump($data["answer"]);
+        
+            //salvo le risposte in una variabile su cui faccio un nuovo ciclo foreach
+            $answers = $data["answer"];
+            //var_dump($answers);
+            echo "<br>";
+            
+            foreach ($answers as $answer) {
+                // ho pero' la terza domanda che ha come risposta un array
+                // quindi faccio un if utilizzando la funzione is_array per valutare la condizione
+                if (!is_array($answer)) {
+                    // con questa condizione se NON e' un array allora stampo il paragrafo
+                    echo $answer . "<br>";
+                } else {
+                    // se invece answer risulta esserr un array, come nella terza domanda
+                    // faccio una nuova serie di cicli foreach
+                    //var_dump($answer);
+                    foreach ($answer as $sub_answer) {
+                        // effettuo un altro controllo if uguale al precedente
+                        if (!is_array($sub_answer)) {
+                            // come in precedenza tramite echo stampo i valori che adesso sono singole stringhe
+                            echo $sub_answer . "<br>";
+                        } else {
+                            // come ultimo passaggio faccio anche qui un ciclo foreach
+                            // per stampare gli ultimi valori degli array pi' interni
+                            foreach ($sub_answer as $sub_sub_answer) {
+                                // stampo quindi i valori delle risposte piu' interne
+                                echo $sub_sub_answer . "<br>";
+                            }
+                            //var_dump($sub_answer);
+        
+                        }
+                    }
+                     
+                }
+                echo "<br>";
+            }
+            echo "<br>";
+        }
+        ?>
+        </div> 
+    </main>
+    <footer>
+        <div class="container">
+            <div class="flexWrapper">
+                <div class="footer_links">
+                    <ul>
+                        <li><a href="#">Google</a></li>
+                        <li><a href="#">Tutto su Google</a></li>
+                        <li><a href="#">Privacy</a></li>
+                        <li><a href="#">Termini</a></li>
+                    </ul>
+                </div>
+                <div class="selectBox">
+                    <select>
+                        <option value="Italiano">Italiano</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

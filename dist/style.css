@@ -108,3 +108,31 @@ header {
   color: #505050;
   font-size: 12px;
 }
+
+main {
+  padding-top: 150px;
+  padding-bottom: 50px;
+}
+
+footer {
+  display: flex;
+  height: 40px;
+  background-color: #fafafa;
+}
+
+.footer_links ul {
+  list-style: none;
+  display: flex;
+}
+.footer_links ul li {
+  margin-right: 5px;
+}
+.footer_links ul li a {
+  color: #505050;
+  font-size: 10px;
+}
+
+.selectBox select {
+  width: 150px;
+  outline: none;
+}
