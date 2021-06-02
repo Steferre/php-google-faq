@@ -1,1 +1,110 @@
+/*font size*/
+/*spacing*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
 
+.container {
+  width: 950px;
+  margin: auto;
+}
+
+.flexWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* colori */
+.blue {
+  color: blue;
+}
+
+.red {
+  color: red;
+}
+
+.yellow {
+  color: gold;
+}
+
+.green {
+  color: #15ea15;
+}
+
+/*reset stile tag a*/
+a {
+  text-decoration: none;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  width: 100%;
+  height: 80px;
+  background-color: #fafafa;
+  border-bottom: 1px solid #b4b4b4;
+  padding: 5px;
+}
+
+.logoBar {
+  display: flex;
+  align-items: center;
+}
+.logoBar .logoBox {
+  display: flex;
+  margin-right: 5px;
+  cursor: pointer;
+}
+.logoBar .logoBox span {
+  font-size: 25px;
+}
+
+.legalText {
+  flex-grow: 1;
+  color: #505050;
+}
+.legalText span {
+  font-size: 25px;
+}
+
+.menuIconBox {
+  display: flex;
+  margin: 0 10px;
+  cursor: pointer;
+}
+.menuIconBox i {
+  font-size: 25px;
+  color: #505050;
+}
+
+.userAccountBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: darkgreen;
+  cursor: pointer;
+}
+.userAccountBox div {
+  color: white;
+  cursor: pointer;
+}
+
+.nav_list {
+  list-style: none;
+  display: flex;
+}
+.nav_list li {
+  margin-right: 10px;
+}
+.nav_list li a {
+  text-transform: uppercase;
+  color: #505050;
+  font-size: 12px;
+}

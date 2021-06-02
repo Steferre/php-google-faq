@@ -62,7 +62,7 @@ $datas = [
 ];
 
 // tramite un foreach stampo i valori dell'array datas
-
+/*
 foreach ($datas as $data) {
     //var_dump($data);
     // stampo le domande tramite il comando echo
@@ -106,10 +106,11 @@ foreach ($datas as $data) {
     }
     echo "<br>";
 }
+*/
 ?>
 
 
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -138,7 +139,7 @@ foreach ($datas as $data) {
                 <i class="fa fa-th"></i>
             </div>
             <div class="userAccountBox">
-                S
+                <div>S</div>
             </div>
         </div>
         <nav class="navbar">
@@ -154,4 +155,4 @@ foreach ($datas as $data) {
     <main></main>
     <footer></footer>
 </body>
-</html> -->
+</html>

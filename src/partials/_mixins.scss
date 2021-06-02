@@ -1,0 +1,19 @@
+@mixin defaultListStyle {
+    list-style: none;
+    display: flex;
+}
+
+@mixin flexStd {
+    display: flex;
+}
+
+@mixin flexCenterBoth {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flexCenterVertical {
+    display: flex;
+    align-items: center;
+}

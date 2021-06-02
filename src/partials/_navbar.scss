@@ -1,0 +1,11 @@
+.nav_list {
+    @include defaultListStyle;
+        li {
+            margin-right: $spaceB10;
+                a {
+                    text-transform: uppercase;
+                    color: $txtColor;
+                    font-size: $small; 
+                }
+        } 
+}

@@ -1,0 +1,42 @@
+.logoBar {
+    @include flexCenterVertical;
+        .logoBox {
+            @include flexStd;
+            margin-right: $spaceB5;
+            cursor: pointer;
+                span {
+                    font-size: $large;
+                }
+        }
+}
+
+.legalText {
+    flex-grow: 1;
+    color: $txtColor;
+        span {
+            font-size: $large;
+        }
+}
+
+.menuIconBox {
+    @include flexStd;
+    margin: 0 $spaceB10;
+    cursor: pointer;
+        i {
+            font-size: $large;
+            color: $txtColor;
+        }
+}
+
+.userAccountBox {
+    @include flexCenterBoth;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: darkgreen;
+    cursor: pointer;
+        div {
+            color: white;
+            cursor: pointer;
+        }
+}

@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    width: 950px;
+    margin: auto;
+}
+
+.flexWrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* colori */
+.blue {
+    color: blue;
+}
+
+.red {
+    color: red;
+}
+
+.yellow {
+    color: gold;
+}
+
+.green {
+    color: #15ea15;
+}
+
+/*reset stile tag a*/
+a {
+    text-decoration: none;
+}
