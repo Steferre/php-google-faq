@@ -120,6 +120,11 @@ main .container ol {
 main .container ol ul {
   list-style-position: inside;
   list-style-type: lower-latin;
+  padding-left: 25px;
+  margin: 5px 0;
+}
+main .container ol ul li {
+  margin: 5px 0;
 }
 
 footer {

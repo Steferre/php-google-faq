@@ -31,12 +31,14 @@ $datas = [
         "answer" => [
             "paragraph_1" => "Il tuo account è associato a un paese (o territorio) nei Termini di servizio per poter stabilire due cose:",   
             "paragraph_2" => [
-                "ord_list_1" => "La società consociata Google che offre i servizi, tratta le tue informazioni ed è responsabile del rispetto delle leggi sulla privacy vigenti. Generalmente Google offre i propri servizi per i consumatori tramite una delle due società seguenti:",
-                "ord_list_2" => [
-                    "sub_list_1" => "Google Ireland Limited, se gli utenti sono residenti nello Spazio economico europeo (paesi dell'Unione europea, oltre a Islanda, Liechtenstein e Norvegia) o in Svizzera.",
-                    "sub_list_2" => "Google LLC, con sede negli Stati Uniti, per il resto del mondo."
-                ],
-                "ord_list_3" => "La versione dei termini che regola il nostro rapporto, che può variare in base alle leggi locali."
+                "ord_list" => [
+                    "ol_item_1" =>  "La società consociata Google che offre i servizi, tratta le tue informazioni ed è responsabile del rispetto delle leggi sulla privacy vigenti. Generalmente Google offre i propri servizi per i consumatori tramite una delle due società seguenti:",
+                    [
+                        "sub_list_item_1" => "Google Ireland Limited, se gli utenti sono residenti nello Spazio economico europeo (paesi dell'Unione europea, oltre a Islanda, Liechtenstein e Norvegia) o in Svizzera.",
+                        "sub_list_item_2" => "Google LLC, con sede negli Stati Uniti, per il resto del mondo."
+                    ],
+                    "ol_item_2" => "La versione dei termini che regola il nostro rapporto, che può variare in base alle leggi locali."
+                ]    
             ],
             "paragraph_3" => "Tieni presente che i servizi Google sono fondamentalmente gli stessi a prescindere dalla società consociata che li offre o dal paese a cui è associato il tuo account.",
             "paragraph_4" => "<strong>Stabilire il paese associato al tuo account</strong>", 
@@ -168,25 +170,34 @@ foreach ($datas as $data) {
         ?>
                     
                     <p><?php echo $answer; ?></p>
-
+                    
         <?php            
                 } else {
                     foreach ($answer as $sub_answer) {
                         if (!is_array($sub_answer)) {
         ?>                                        
-                            <ol>
-                                <li><?php echo $sub_answer; ?></li>
-                                <ul>                       
+                            
+                            <p><?php echo $sub_answer; ?></p>
+                                                       
         <?php                    
                         } else {
-                            foreach ($sub_answer as $sub_sub_answer) {
+                            echo "<ol>";
+                            foreach ($sub_answer as $olItems) {
+                                if (!is_array($olItems)) {
         ?>
-                                
-                                    <li><?php echo $sub_sub_answer; ?></li>
-                                </ul>
-                            </ol>
+                               <li><?php echo $olItems; ?></li> 
         <?php
+                                } else {
+                                    echo "<ul>";
+                                    foreach ($olItems as $ulItems) {
+        ?>
+                                        <li><?php echo $ulItems; ?></li>
+        <?php
+                                    }
+                                    echo "</ul>";
+                                }        
                             }
+                            echo "</ol>";
                         }
                     }    
                 }
